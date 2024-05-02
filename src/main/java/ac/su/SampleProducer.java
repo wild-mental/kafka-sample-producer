@@ -23,8 +23,8 @@ public class SampleProducer {
         // 2. producer 객체 생성
         KafkaProducer<String, String> producer = new KafkaProducer<>(configs);
         // producer 앱은 항상 작업을 마치고 접속 종료 보장을 코드에 명시적으로 구현해야 함
-        // 1. 명시적 close() 호출
-        // 2. try - with - resource 구문에 producer 생성
+        //     1) 명시적 close() 호출
+        //     2) try - with - resource 구문에 producer 생성
         for (int i = 0; i < 10; i++) {
             // 3. 메시지 생성 및 Record 형태로 Topic 에 바인딩
             String msgValue = "this"+ i +"th msg is from java client";
